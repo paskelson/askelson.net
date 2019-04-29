@@ -9,11 +9,6 @@ export const List = styled.li`
 export const Item = styled.li`
 `;
 
-export const Link = styled.a`
-    color: ${props => props.theme.colors.fg};
-    text-decoration: none;
-`;
-
 export const Title = styled.div`
     color: ${props => props.theme.colors.fg};
     font-family: ${props => props.theme.font.body};
@@ -23,4 +18,13 @@ export const Title = styled.div`
 export const Date = styled.div`
     font-family: ${props => props.theme.font.body};
     font-size: ${ms(-1)}rem;
+    color: ${props => props.theme.colors.light};
+`;
+
+export const Link = styled.a`
+    color: ${props => props.theme.colors.fg};
+    text-decoration: none;
+    &:hover ${Title} {
+        color: ${props => props.theme.colors.accent} !important;
+    }
 `;

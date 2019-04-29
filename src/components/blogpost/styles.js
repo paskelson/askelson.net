@@ -8,6 +8,10 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
     margin-bottom: ${ms(2)}rem;
+
+    &:hover h3 {
+        color: ${props => props.theme.colors.accent};
+    }
 `;
 
 export const ListTitle = styled.h3`
@@ -20,6 +24,7 @@ export const ListTitle = styled.h3`
 export const ListDate = styled.div`
     font-size: ${ms(-1)}rem;
     margin-bottom: ${ms(-2)}rem;
+    color: ${props => props.theme.colors.light};
 `;
 
 export const ListExcerpt = styled.div`

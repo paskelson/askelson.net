@@ -2,11 +2,11 @@ import { createGlobalStyle } from "styled-components"
 
 export const theme = {
     colors: {
-        fg: '#000',
+        fg: '#292C37',
         bg: '#fff',
-        light: '#666',
+        light: '#434D53',
         lighter: '#ccc',
-        accent: '',
+        accent: '#C02129',
     },
     font: {
         title: "'Abril Fatface', Georgia, serif",

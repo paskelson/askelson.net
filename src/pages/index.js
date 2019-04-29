@@ -40,8 +40,8 @@ const HeroImage = styled.div`
 
 const SectionHeading = styled.h3`
   font-size: ${ms(2)}rem;
-  font-weight: 500;
   box-sizing: border-box;
+  margin-bottom: ${ms(0)}rem;
 
   ${props => !props.image ? '' : (`
     background-image: url(${props.image});

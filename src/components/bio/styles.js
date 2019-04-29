@@ -27,26 +27,24 @@ export const Bio = styled.div`
     `}
 `;
 
-export const SubsectionTitle = styled.h3`
-    font-size: ${ms(0)}rem;
-    font-weight: bold;
-`;
-
 export const Links = styled.ul`
-    padding: 0;
+    margin-top: ${ms(1)}rem;
     list-style-type: none;
+    padding: 0;
 `;
 
-export const LinkItem = styled.li`
-
-`;
+export const LinkItem = styled.li``;
 
 export const Link = styled.a`
-    color: ${props => props.theme.colors.fg};
+    color: ${props => props.theme.colors.light};
     text-decoration: none;
     font-family: ${props => props.theme.font.body};
     svg {
         vertical-align: middle;
+        color: ${props => props.theme.colors.light} !important;
+    }
+    &:hover, &:hover svg {
+        color: ${props => props.theme.colors.accent} !important;
     }
 `;
 
