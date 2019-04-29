@@ -12,7 +12,7 @@ export const Item = styled.li`
 export const Title = styled.div`
     color: ${props => props.theme.colors.fg};
     font-family: ${props => props.theme.font.body};
-    font-size: ${ms(0)}rem;
+    font-size: ${ms(-1)}rem;
 `;
 
 export const Date = styled.div`
