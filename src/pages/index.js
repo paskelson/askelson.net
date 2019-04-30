@@ -20,14 +20,18 @@ const MainPage = styled.div`
 `;
 
 const BlogPosts = styled.div`
-  width: calc(70% - ${ms(3)}rem);
-  margin-right: ${ms(3)}rem;
-  float: left;
+  @media (min-width: 700px) {
+    width: calc(70% - ${ms(3)}rem);
+    margin-right: ${ms(3)}rem;
+    float: left;
+  }
 `;
 
 const AuthorInfo = styled.div`
-  width: 30%;
-  float: left;
+  @media (min-width: 700px) {
+    width: 30%;
+    float: left;
+  }
 `;
 
 const HeroImage = styled.div`
