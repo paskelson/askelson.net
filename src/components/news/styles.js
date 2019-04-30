@@ -7,6 +7,7 @@ export const List = styled.li`
 `;
 
 export const Item = styled.li`
+    margin-bottom: ${ms(0)}rem;
 `;
 
 export const Title = styled.div`

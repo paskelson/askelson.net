@@ -7,7 +7,7 @@ import { List, Item, Title, Date, Link } from "./styles"
 export default () => {
     const { news } = useStaticQuery(graphql`
         query {
-            news: allNewsYaml(sort: {fields: [date]}) {
+            news: allNewsYaml(sort: {fields: [date], order: DESC}) {
                 nodes {
                     title
                     date
