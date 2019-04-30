@@ -25,7 +25,7 @@ export default ({ type }) => {
     return (
         <Wrapper>
             {!showImage ? '' : (
-                <BioImage src={ headshot } />
+                <BioImage src={ headshot } alt="Photo of Phoebe Askelson" />
             )}
             <Bio float={ showImage } light={ type === "horizontal" }>
                 <p>{ config.bio }</p>
