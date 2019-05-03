@@ -5,7 +5,7 @@ export const theme = {
         fg: '#292C37',
         bg: '#fff',
         light: '#434D53',
-        lighter: '#ccc',
+        lighter: '#ddd',
         accent: '#C02129',
     },
     font: {

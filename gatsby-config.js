@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -29,6 +32,17 @@ module.exports = {
         path: `${__dirname}/content/news`,
         name: `news`,
       },
+    },
+    {
+      resolve:`gatsby-source-cloudinary`,
+      options:{
+        cloudName: process.env.CLOUDINARY_NAME,
+        apiKey: process.env.CLOUDINARY_KEY,
+        apiSecret: process.env.CLOUDINARY_SECRET,
+        resourceType: 'image',
+        maxResults: 500,
+        prefix: process.env.PREFIX+'/'
+        }
     },
     `gatsby-transformer-yaml`,
     {
