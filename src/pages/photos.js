@@ -56,7 +56,7 @@ export default ({ data }) => {
           
           <Gallery
             photos={ groups[groupName] } targetRowHeight={150}
-            onClick={ (e, obj) => typeof(window) != null ? window.open(obj.photo.srcOriginal, "_blank") : null } />
+            onClick={ (e, obj) => typeof(window) !== 'undefined' ? window.open(obj.photo.srcOriginal, "_blank") : null } />
         </GallerySection>
       ))}
     </Layout>
