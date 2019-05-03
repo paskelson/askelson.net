@@ -7,12 +7,12 @@ bio: >
   using nonlinear optical spectroscopies at the University of Pennsylvania, under the
   guidance of Professor Jessica Anna.
 links:
-  - title: Instagram
-    icon: instagram
-    link: https://instagram.com/phoebe.askelson/
   - title: LinkedIn
     icon: linkedin
     link: https://www.linkedin.com/in/phoebe-askelson-74b94a160/
   - title: Twitter
     icon: twitter
     link: https://twitter.com/punchemist
+  - title: Photography
+    icon: camera
+    link: /photos
