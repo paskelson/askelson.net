@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import { ms } from "modularscale-helpers"
+import { FaLink } from "react-icons/fa"
 import Gallery from "react-photo-gallery"
 
 import Layout from "../components/layout"
@@ -21,8 +22,11 @@ const SectionHeading = styled.h3`
 const SectionLink = styled.a`
   font-size: ${ms(-1)}rem;
   font-weight: 400;
-  color: ${props => props.theme.colors.light};
   margin-left: ${ms(-3)}rem;
+
+  &, svg {
+    color: ${props => props.theme.colors.lighter} !important;
+  }
 `;
 
 const photosToGroups = (photos) => {
@@ -32,7 +36,7 @@ const photosToGroups = (photos) => {
     if (typeof(photoGroups[directory]) === 'undefined') photoGroups[directory] = [];
     photoGroups[directory].push({
       src: photo.secure_url.replace('/upload/', '/upload/w_750,h_750,c_limit/'),
-      srcOriginal: photo.secure_url,
+      original: photo.secure_url,
       width: photo.width/1000,
       height: photo.height/1000,
     });
@@ -48,15 +52,15 @@ export default ({ data }) => {
     <Layout>
       <Metadata title="" />
       {Object.keys(groups).map((groupName) => (
-        <GallerySection>
+        <GallerySection key={groupName}>
           <SectionHeading>
             { groupName }
-            <SectionLink href={`#${groupName.replace(/\W/g, '-').toLowerCase()}`} name={groupName.replace(/\W/g, '-').toLowerCase()}>(link)</SectionLink>
+            <SectionLink href={`#${groupName.replace(/\W/g, '-').toLowerCase()}`} name={groupName.replace(/\W/g, '-').toLowerCase()}><FaLink /></SectionLink>
           </SectionHeading>
           
           <Gallery
             photos={ groups[groupName].reverse() } targetRowHeight={150}
-            onClick={ (e, obj) => typeof(window) !== 'undefined' ? window.open(obj.photo.srcOriginal, "_blank") : null } />
+            onClick={ (e, obj) => typeof(window) !== 'undefined' ? window.open(obj.photo.original, "_blank") : null } />
         </GallerySection>
       ))}
     </Layout>

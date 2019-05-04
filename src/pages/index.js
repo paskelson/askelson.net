@@ -1,15 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { ms } from 'modularscale-helpers'
-
-import heroImage from "../../content/hero.jpg"
+import { ms } from "modularscale-helpers"
 
 import Layout from "../components/layout"
 import Metadata from "../components/metadata"
 import Bio from "../components/bio"
 import News from "../components/news"
 import BlogPostList from "../components/blogpost/list"
+
+import heroImage from "../../content/hero.jpg"
+
 
 const MainPage = styled.div`
   &:after {

@@ -35,7 +35,7 @@ export const Links = styled.ul`
 
 export const LinkItem = styled.li``;
 
-export const Link = styled.a`
+export const LinkHolder = styled.span`
     color: ${props => props.theme.colors.light};
     text-decoration: none;
     font-family: ${props => props.theme.font.body};

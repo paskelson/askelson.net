@@ -1,6 +1,6 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Wrapper, Bio, BioImage, Links, LinkItem, Link, LinkText } from "./styles"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { Wrapper, Bio, BioImage, Links, LinkItem, LinkHolder, LinkText } from "./styles"
 import * as Icons from "react-icons/fa"
 
 import headshot from "../../../content/headshot.jpg"
@@ -35,8 +35,13 @@ export default ({ type }) => {
                 <Links>
                     {config.links.map(({ title, icon, link }) => {
                         const Icon = Icons[`Fa${icon.charAt(0).toUpperCase() + icon.slice(1)}`];
+                        const LinkInner = <LinkHolder><Icon /> <LinkText>{ title }</LinkText></LinkHolder>;
                         return <LinkItem>
-                            <Link href={ link } target="_blank" rel="noopener noreferrer"><Icon /> <LinkText>{ title }</LinkText></Link>
+                            { link.substring(0,1) === '/' ? (
+                                <Link to={ link }>{ LinkInner }</Link>
+                            ) : (
+                                <a href={ link } target="_blank" rel="noopener noreferrer">{ LinkInner }</a>
+                            )}
                         </LinkItem>
                     })}
                 </Links>
