@@ -31,7 +31,7 @@ const photosToGroups = (photos) => {
     const directory = photo.public_id.split('/')[1].split(' ').slice(1).join(' ');
     if (typeof(photoGroups[directory]) === 'undefined') photoGroups[directory] = [];
     photoGroups[directory].push({
-      src: photo.secure_url.replace('/upload/', '/upload/w_300,h_300,c_limit/'),
+      src: photo.secure_url.replace('/upload/', '/upload/w_750,h_750,c_limit/'),
       srcOriginal: photo.secure_url,
       width: photo.width/1000,
       height: photo.height/1000,
@@ -55,7 +55,7 @@ export default ({ data }) => {
           </SectionHeading>
           
           <Gallery
-            photos={ groups[groupName] } targetRowHeight={150}
+            photos={ groups[groupName].reverse() } targetRowHeight={150}
             onClick={ (e, obj) => typeof(window) !== 'undefined' ? window.open(obj.photo.srcOriginal, "_blank") : null } />
         </GallerySection>
       ))}
