@@ -32,6 +32,7 @@ const SectionLink = styled.a`
 const photosToGroups = (photos) => {
   const photoGroups = {};
   photos.forEach((photo) => {
+    console.log(photo);
     const directory = photo.public_id.split('/')[1].split(' ').slice(1).join(' ');
     if (typeof(photoGroups[directory]) === 'undefined') photoGroups[directory] = [];
     photoGroups[directory].push({
